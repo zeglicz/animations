@@ -8,10 +8,14 @@ My journal of animations I liked, built, or felt inspired to recreate. Small mot
 
 I don’t remember where I first saw this animation, but I liked it enough to recreate it back in 2021 on my first web development company’s landing page. I copied it from my old repo, so this is exactly how it looked back then.
 
-![Typing Reveal](assets/typing-reveal.gif)
+<div align="center">
+    <img src="assets/typing-reveal.gif" alt="Typing Reveal"/>
+</div>
 
 ### 2. Photo Bubble
 
 I found this effect in a YouTube video where someone was reviewing front-end developer portfolios. Back then, I was browsing the web to see what a front-end portfolio should include, and this animation caught my eye. Unfortunately, the developer’s site changed and the effect was gone, so I decided to recreate it in my own style.
 
-![Photo Bubblel](assets/photo-bubble.gif)
+<div align="center">
+    <img src="assets/photo-bubble.gif" alt="Photo Bubble"/>
+</div>
