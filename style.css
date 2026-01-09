@@ -55,3 +55,91 @@
 #typing-reveal-cursor.active {
   opacity: 0;
 }
+
+/* //////////////////////// */
+/* Typing Reveal */
+/* //////////////////////// */
+
+.photo-bubble {
+  --bubble-size: 175px;
+  --bubble-duration: 8s;
+  --bubble-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+
+  @media (min-width: 768px) {
+    --bubble-size: 275px;
+  }
+
+  @media (min-width: 1280px) {
+    --bubble-size: 400px;
+  }
+}
+
+.photo-bubble::before {
+  content: '';
+  position: absolute;
+  width: calc(var(--bubble-size) + 50px);
+  height: calc(var(--bubble-size) + 50px);
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  z-index: 0;
+  animation: photo-bubble-glow var(--bubble-duration) ease-in-out infinite;
+  filter: blur(50px);
+  will-change: border-radius;
+}
+
+.photo-bubble img {
+  width: var(--bubble-size);
+  height: var(--bubble-size);
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  box-shadow: var(--bubble-shadow);
+  animation: photo-bubble var(--bubble-duration) ease-in-out infinite;
+  will-change: border-radius;
+}
+
+@keyframes photo-bubble {
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 55% 45% 50% 50% / 40% 50% 50% 60%;
+  }
+  75% {
+    border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+  }
+}
+
+@keyframes photo-bubble-glow {
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: scale(1);
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: scale(1.05);
+  }
+  50% {
+    border-radius: 55% 45% 50% 50% / 40% 50% 50% 60%;
+    transform: scale(1.1);
+  }
+  75% {
+    border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    transform: scale(1.05);
+  }
+}
